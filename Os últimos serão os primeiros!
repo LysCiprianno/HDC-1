@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Últimos Serão os Primeiros!</title>
+</head>
+<body>
+    <h1>Informe os valores escolhidos:</h1>
+ 
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <input type="number" id="valor4" placeholder="Valor 4">
+    <button onclick="mostrarValores()">Mostrar Valores</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function mostrarValores() {
+            // Ler valores
+            const valor1 = parseFloat(document.getElementById('valor1').value);
+            const valor2 = parseFloat(document.getElementById('valor2').value);
+            const valor3 = parseFloat(document.getElementById('valor3').value);
+            const valor4 = parseFloat(document.getElementById('valor4').value);
+ 
+            // Encontrar o maior valor
+            const maior = Math.max(valor1, valor2, valor3, valor4);
+ 
+            // Mostrar resultados
+            document.getElementById('resultado').textContent =
+                `Primeiro valor é: ${valor1}, O Último é: ${valor4}, O Maior é: ${maior}`;
+        }
+    </script>
+</body>
+</html>
