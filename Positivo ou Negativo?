@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificaremos Números</title>
+</head>
+<body>
+    <h1>Classificar Número</h1>
+ 
+    <input type="number" id="valor" placeholder="Digite um número">
+    <button onclick="classificar()">Classificar</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function classificar() {
+            const valor = parseFloat(document.getElementById('valor').value);
+            let resultado;
+ 
+            if (valor > 0) {
+                resultado = 'O valor é positivo 😄.';
+            } else if (valor < 0) {
+                resultado = 'O valor é negativo 🥺.';
+            } else {
+                resultado = 'O valor é nulo 😎.';
+            }
+ 
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
