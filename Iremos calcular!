@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iremos Calcular!</title>
+</head>
+<body>
+    <h1>Somaremos os dois maiores valores</h1>
+ 
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1"><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2"><br>
+    <label for="valor3">Valor 3:</label>
+    <input type="number" id="valor3"><br>
+    <button onclick="somarMaiores()">Vamos somar!</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function somarMaiores() {
+            const valor1 = parseFloat(document.getElementById('valor1').value);
+            const valor2 = parseFloat(document.getElementById('valor2').value);
+            const valor3 = parseFloat(document.getElementById('valor3').value);
+ 
+            // Encontra os dois maiores valores
+            let maior1, maior2;
+ 
+            if (valor1 > valor2) {
+                if (valor1 > valor3) {
+                    maior1 = valor1;
+                    maior2 = Math.max(valor2, valor3);
+                } else {
+                    maior1 = valor3;
+                    maior2 = valor1;
+                }
+            } else {
+                if (valor2 > valor3) {
+                    maior1 = valor2;
+                    maior2 = Math.max(valor1, valor3);
+                } else {
+                    maior1 = valor3;
+                    maior2 = valor2;
+                }
+            }
+ 
+            const soma = maior1 + maior2;
+            document.getElementById('resultado').textContent = 'A soma dos dois maiores valores é 🤓: ' + soma;
+        }
+    </script>
+</body>
+</html>
