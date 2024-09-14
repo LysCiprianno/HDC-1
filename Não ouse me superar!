@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caótico e Organizado</title>
+</head>
+<body>
+    <h1>Calcularemos a média dos números informados:</h1>
+    <h4>Neste programa, calcularemos a média dos números que você informar, de 1 a 10. Se a média for maior que 5, você me venceu. Caso contrário... tente novamente</h4>
+ 
+    <input type="number" id="valor1" placeholder="Número 1" min="0" max="10" step="0.1">
+    <input type="number" id="valor2" placeholder="Número 2" min="0" max="10" step="0.1">
+    <input type="number" id="valor3" placeholder="Número 3" min="0" max="10" step="0.1">
+    <input type="number" id="valor4" placeholder="Número 4" min="0" max="10" step="0.1">
+    <button onclick="calcularMedia()">Vamos calcular!</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function calcularMedia() {
+            // Ler valores e verificar se estão no intervalo correto
+            const valores = [
+                parseFloat(document.getElementById('valor1').value),
+                parseFloat(document.getElementById('valor2').value),
+                parseFloat(document.getElementById('valor3').value),
+                parseFloat(document.getElementById('valor4').value)
+            ];
+ 
+            if (valores.every(v => v > 0 && v < 10)) {
+                const media = valores.reduce((acc, val) => acc + val, 0) / valores.length;
+                document.getElementById('resultado').textContent = media > 5 ? "Impressionante, você passou no teste! 😲" : "Você não me venceu, haha! 😝";
+            } else {
+                document.getElementById('resultado').textContent = "Todos os números devem estar entre 0 e 10.";
+            }
+        }
+    </script>
+</body>
+</html>
