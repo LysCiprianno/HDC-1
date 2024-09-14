@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Calcularemos a Média Aritmética!</h1>
+ 
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <input type="number" id="valor4" placeholder="Valor 4">
+    <input type="number" id="valor5" placeholder="Valor 5">
+    <input type="number" id="valor6" placeholder="Valor 6">
+    <button onclick="calcularMedia()">Vamos calcular?</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function calcularMedia() {
+            const valores = [
+                parseFloat(document.getElementById('valor1').value),
+                parseFloat(document.getElementById('valor2').value),
+                parseFloat(document.getElementById('valor3').value),
+                parseFloat(document.getElementById('valor4').value),
+                parseFloat(document.getElementById('valor5').value),
+                parseFloat(document.getElementById('valor6').value)
+            ];
+ 
+            const soma = valores.reduce((acc, val) => acc + val, 0);
+            const media = soma / valores.length;
+ 
+            document.getElementById('resultado').textContent = `A média aritmética é 🤓: ${media.toFixed(2)}`;
+        }
+    </script>
