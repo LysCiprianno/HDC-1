@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Peso Ideal...</title>
+</head>
+<body>
+    <h1>Calcularemos o seu peso ideal</h1>
+    <h4>Lembre-se: O "peso ideal" é apenas uma estimativa baseada em altura e gênero, mas não reflete a individualidade de cada corpo. Fatores como genética, massa muscular e saúde geral são mais importantes. O foco deve estar em manter um estilo de vida saudável, e não em atingir um número específico ❤️.</h4>
+ 
+    <label for="altura">Altura (m):</label>
+    <input type="number" id="altura" step="0.01" placeholder="Altura">
+    
+    <label for="genero">Gênero (1: Feminino, 2: Masculino):</label>
+    <input type="number" id="genero" placeholder="Gênero" min="1" max="2">
+ 
+    <button onclick="calcularPeso()">Vamos calcular?</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function calcularPeso() {
+            const altura = parseFloat(document.getElementById('altura').value);
+            const genero = parseInt(document.getElementById('genero').value);
+            let peso;
+ 
+            if (genero === 1) { // Feminino
+                peso = (62.1 * altura) - 44.7;
+            } else if (genero === 2) { // Masculino
+                peso = (72.7 * altura) - 58;
+            } else {
+                document.getElementById('resultado').textContent = "Gênero inválido. Use 1 para feminino ou 2 para masculino.";
+                return;
+            }
+ 
+            document.getElementById('resultado').textContent = `Peso ideal: ${peso.toFixed(2)} kg`;
+        }
+    </script>
+</body>
+</html>
