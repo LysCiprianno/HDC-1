@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva a Democracia Brasileira!</title>
+</head>
+<body>
+    <h1>Verificaremos se você pode votar este ano:</h1>
+ 
+    <input type="number" id="anoNascimento" placeholder="Ano de nascimento">
+    <button onclick="verificarVoto()">Vamos verificar!</button>
+    <p id="resultado"></p>
+ 
+    <script>
+        function verificarVoto() {
+            const anoNascimento = document.getElementById('anoNascimento').value;
+            const idade = new Date().getFullYear() - anoNascimento;
+ 
+            if (idade >= 16) {
+                document.getElementById('resultado').textContent = "Eba, você pode votar!";
+            } else {
+                document.getElementById('resultado').textContent = "Que pena, por enquanto você não pode votar.";
+            }
+        }
+    </script>
+</body>
+</html>
